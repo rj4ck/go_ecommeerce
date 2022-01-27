@@ -22,7 +22,6 @@ func GetAllCategories(c *fiber.Ctx) error {
 	defer cancel()
 
 	findOptions := options.Find()
-	// Sort by `price` field descending
 	findOptions.SetSort(bson.D{{"index", 1}})
 
 	results, err := categoriesCollection.Find(ctx, bson.M{}, findOptions)
